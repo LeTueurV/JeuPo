@@ -6,19 +6,6 @@ div{
     text-align: center;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    background-color: #fff;
-    box-shadow:
-      0 0 60px 30px #fff,  /* inner white */
-      0 0 100px 60px #f0f, /* middle magenta */
-      0 0 140px 90px #0ff; /* outer cyan */
-  
-    height:200vh;
-    width: 100%;
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-   background-attachment: fixed;
   background-image: url("https://img.freepik.com/photos-gratuite/montagne-foret-jungle-arbres-dessin-anime-fond-ai-generatif_191095-1949.jpg")
 }
 
