@@ -6,7 +6,8 @@ body {
 
 a {
   position: relative;
-  color: rgb(0, 162, 255)
+  color: rgb(0, 162, 255);
+  font-size: 22px;
   
 }
 
