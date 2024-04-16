@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onglets</title>
+    <title>Onglets avec Menu Déroulant</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body style="background-image: url('background.jpg'); background-size: cover;">
 
-<div class="tabs">
-    <button class="tablinks" onclick="openTab(event, 'information')">Information</button>
-    <button class="tablinks" onclick="openTab(event, 'telechargement')">Téléchargement</button>
-    <button class="tablinks" onclick="openTab(event, 'contact')">Contact</button>
+<div class="navbar">
+    <a href="#" class="logo">Mon Site Web</a>
+    <div class="dropdown">
+        <button class="dropbtn">Menu &#9662;</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="openTab(event, 'information')">Information</a>
+            <a href="#" onclick="openTab(event, 'telechargement')">Téléchargement</a>
+            <a href="#" onclick="openTab(event, 'contact')">Contact</a>
+        </div>
+    </div>
 </div>
 
 <div id="information" class="tabcontent">
@@ -36,7 +42,7 @@
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
-        tablinks = document.getElementsByClassName("tablinks");
+        tablinks = document.getElementsByTagName("a");
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
