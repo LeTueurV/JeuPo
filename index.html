@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onglets avec Menu Déroulant</title>
+    <title>Menu Déroulant avec Sections</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-image: url('background.jpg'); background-size: cover;">
+<body>
 
 <div class="navbar">
-    <a href="#" class="logo">Mon Site Web</a>
-    <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown()">Menu &#9662;</button>
-        <div class="dropdown-content" id="dropdownContent">
-            <button onclick="openSection('information')">Information</button>
-            <button onclick="openSection('telechargement')">Téléchargement</button>
-            <button onclick="openSection('contact')">Contact</button>
-            <a href="patch-notes.html">Mises à jour (Patch Notes)</a>
-        </div>
+    <button class="dropbtn" onclick="toggleDropdown()">Menu &#9662;</button>
+    <div class="dropdown-content" id="dropdownContent">
+        <button onclick="openSection('information')">Information</button>
+        <button onclick="openSection('telechargement')">Téléchargement</button>
+        <button onclick="openSection('contact')">Contact</button>
+        <a href="patch-notes.html">Mises à jour (Patch Notes)</a>
     </div>
 </div>
 

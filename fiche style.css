@@ -6,28 +6,10 @@ body {
 
 /* Barre de navigation */
 .navbar {
-  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
   background-color: #333;
-  padding: 10px 20px;
-}
-
-.navbar a {
-  float: left;
-  color: #fff;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.dropdown {
-  float: right;
-  display: inline-block;
+  padding: 10px;
 }
 
 .dropbtn {
@@ -36,6 +18,7 @@ body {
   border: none;
   cursor: pointer;
   font-size: 16px;
+  margin-right: 10px;
 }
 
 .dropdown-content {
