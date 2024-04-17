@@ -23,8 +23,21 @@
 </div>
 
 <script>
+    var dropdownVisible = false;
+
     function toggleDropdown() {
-        document.getElementById("dropdownContent").classList.toggle("show");
+        var dropdownContent = document.getElementById("dropdownContent");
+        dropdownVisible = !dropdownVisible;
+
+        if (dropdownVisible) {
+            dropdownContent.style.display = "block";
+            // Ajouter un écouteur d'événement pour fermer le menu en cliquant à l'extérieur
+            document.addEventListener("click", closeDropdownOutside);
+        } else {
+            dropdownContent.style.display = "none";
+            // Supprimer l'écouteur d'événement lorsque le menu est fermé
+            document.removeEventListener("click", closeDropdownOutside);
+        }
     }
 
     function openSection(sectionName) {
@@ -56,7 +69,18 @@
         }
 
         // Ferme le menu déroulant après avoir sélectionné une section
-        document.getElementById("dropdownContent").classList.remove("show");
+        toggleDropdown();
+    }
+
+    function closeDropdownOutside(event) {
+        var dropdownContent = document.getElementById("dropdownContent");
+        var dropbtn = document.querySelector(".dropbtn");
+
+        if (!dropdownContent.contains(event.target) && event.target !== dropbtn) {
+            dropdownContent.style.display = "none";
+            dropdownVisible = false;
+            document.removeEventListener("click", closeDropdownOutside);
+        }
     }
 </script>
 
