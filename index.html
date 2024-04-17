@@ -31,12 +31,8 @@
 
         if (dropdownVisible) {
             dropdownContent.style.display = "block";
-            // Ajouter un écouteur d'événement pour fermer le menu en cliquant à l'extérieur
-            document.addEventListener("click", closeDropdownOutside);
         } else {
             dropdownContent.style.display = "none";
-            // Supprimer l'écouteur d'événement lorsque le menu est fermé
-            document.removeEventListener("click", closeDropdownOutside);
         }
     }
 
@@ -70,17 +66,6 @@
 
         // Ferme le menu déroulant après avoir sélectionné une section
         toggleDropdown();
-    }
-
-    function closeDropdownOutside(event) {
-        var dropdownContent = document.getElementById("dropdownContent");
-        var dropbtn = document.querySelector(".dropbtn");
-
-        if (!dropdownContent.contains(event.target) && event.target !== dropbtn) {
-            dropdownContent.style.display = "none";
-            dropdownVisible = false;
-            document.removeEventListener("click", closeDropdownOutside);
-        }
     }
 </script>
 
