@@ -11,47 +11,55 @@
 <div class="navbar">
     <a href="#" class="logo">Mon Site Web</a>
     <div class="dropdown">
-        <button class="dropbtn">Menu &#9662;</button>
-        <div class="dropdown-content">
-            <a href="#" onclick="openTab(event, 'information')">Information</a>
-            <a href="#" onclick="openTab(event, 'telechargement')">Téléchargement</a>
-            <a href="#" onclick="openTab(event, 'contact')">Contact</a>
-            <a href="patch-notes.html">Patch Notes</a>
+        <button class="dropbtn" onclick="toggleDropdown()">Menu &#9662;</button>
+        <div class="dropdown-content" id="dropdownContent">
+            <button onclick="openSection('information')">Information</button>
+            <button onclick="openSection('telechargement')">Téléchargement</button>
+            <button onclick="openSection('contact')">Contact</button>
+            <a href="patch-notes.html">Mises à jour (Patch Notes)</a>
         </div>
     </div>
 </div>
 
-<div id="information" class="tabcontent">
-    <h2>Information</h2>
-    <p>Contenu de la section Information...</p>
-    <!-- Ajoutez ici le contenu spécifique pour la page d'information -->
-</div>
-
-<div id="telechargement" class="tabcontent">
-    <h2>Téléchargement</h2>
-    <p>Contenu de la section Téléchargement...</p>
-    <!-- Ajoutez ici le contenu spécifique pour la page de téléchargement -->
-</div>
-
-<div id="contact" class="tabcontent">
-    <h2>Contact</h2>
-    <p>Contenu de la section Contact...</p>
-    <!-- Ajoutez ici le contenu spécifique pour la page de contact -->
+<div id="sectionContainer">
+    <!-- Contenu des sections chargé dynamiquement -->
 </div>
 
 <script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+    function toggleDropdown() {
+        document.getElementById("dropdownContent").classList.toggle("show");
+    }
+
+    function openSection(sectionName) {
+        var sectionContainer = document.getElementById("sectionContainer");
+        sectionContainer.innerHTML = ""; // Efface le contenu existant
+
+        switch (sectionName) {
+            case 'information':
+                sectionContainer.innerHTML = `
+                    <h2>Information</h2>
+                    <p>Contenu de la section Information...</p>
+                `;
+                break;
+            case 'telechargement':
+                sectionContainer.innerHTML = `
+                    <h2>Téléchargement</h2>
+                    <p>Contenu de la section Téléchargement...</p>
+                `;
+                break;
+            case 'contact':
+                sectionContainer.innerHTML = `
+                    <h2>Contact</h2>
+                    <p>Contenu de la section Contact...</p>
+                `;
+                break;
+            // Ajoutez d'autres cas pour d'autres sections si nécessaire
+            default:
+                break;
         }
-        tablinks = document.getElementsByTagName("a");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
+
+        // Ferme le menu déroulant après avoir sélectionné une section
+        document.getElementById("dropdownContent").classList.remove("show");
     }
 </script>
 
