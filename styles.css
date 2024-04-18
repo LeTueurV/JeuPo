@@ -83,3 +83,13 @@ p {
     padding: 20px;
     transition: opacity 0.3s ease; /* Animation de transition pour le conteneur principal */
 }
+
+table{
+    border-collapse: collapse
+}
+  
+td{
+    border: 1px solid black;
+    padding: 10px;
+}
+  
