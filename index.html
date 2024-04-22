@@ -5,220 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu en programmation</title>
     <link rel="stylesheet" href="styles.css">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-084VQT61LM"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-084VQT61LM');
-    </script>
-
 </head>
 <body>
 
-<div class="navbar">
-    <a href="#" class="homebtn" text-align: left>Bienvenue</a>
-    <a href="#" class="homebtn" onclick="showHomepage()">Accueil</a>
-    <button class="dropbtn" onclick="toggleDropdown()">Menu &#9662;</button>
-    <div class="dropdown-content" id="dropdownContent">
-        <button onclick="openSection('information')">Information</button>
-        <button onclick="openSection('telechargement')">Téléchargement</button>
-        <button onclick="openSection('contact')">Contact</button>
-        <button onclick="openSection('patchnotes')">Patch Notes</button>
-        <button onclick="openSection('classement')">Classement</button>
-    </div>
-</div>
+<header class="navbar">
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showHomepage()">Accueil</a></li>
+            <li><a href="#" onclick="openSection('information')">Information</a></li>
+            <li><a href="#" onclick="openSection('telechargement')">Téléchargement</a></li>
+            <li><a href="#" onclick="openSection('contact')">Contact</a></li>
+            <li><a href="#" onclick="openSection('classement')">Classement</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div id="sectionContainer" class="homepage">
+<main id="sectionContainer" class="homepage">
+    <section>
         <h1>Bienvenue sur la Page d'Accueil</h1>
         <p>Bonjour et bienvenue sur mon site dédié aux jeux créés avec Python, Tkinter et PIL. Je suis passionné par le développement de jeux interactifs et j'explore les possibilités offertes par ces technologies pour offrir des expériences uniques.</p>
-        
-        <h2>À Propos de Moi</h2>
-        <p>Je suis un développeur autodidacte passionné par la programmation de jeux en utilisant Python. Mes créations combinent l'art du code avec des éléments visuels attrayants grâce à Tkinter et PIL.</p>
-        
-        <h2>Mes Projets</h2>
-        <div class="project">
-                        <p><strong>Jeu Pokémon</strong> - Explorez un monde fantastique et affrontez des adversaires avec vos Pokémon préférés.</p>
-        </div>
-    
-        <h2>Qu'est-ce que Vous Trouverez Ici ?</h2>
-        <p>Sur ce site, vous pouvez découvrir mes créations, en apprendre davantage sur mes techniques de développement et me contacter pour des collaborations ou des suggestions.</p>
-    
-        <h2>Contactez-moi</h2>
-        <p>N'hésitez pas à me contacter si vous avez des questions, des idées ou si vous souhaitez en savoir plus sur mes projets. Je suis toujours ouvert aux discussions et aux nouvelles opportunités !</p>
-        
-        <h2>Crédit</h2>
-        <p>Je remercie ma copine pour l'aide sur les bugs et les photos des pokémon pour le 1er jeu</p>
-    </div>
-</div>
+    </section>
+</main>
 
-<script>
-    var dropdownVisible = false;
-
-    function toggleDropdown() {
-        var dropdownContent = document.getElementById("dropdownContent");
-        dropdownVisible = !dropdownVisible;
-
-        if (dropdownVisible) {
-            dropdownContent.classList.add("dropdown-open"); // Ajoute la classe pour ouvrir le menu
-        } else {
-            dropdownContent.classList.remove("dropdown-open"); // Retire la classe pour fermer le menu
-        }
-    }
-
-    function openSection(sectionName) {
-        var sectionContainer = document.getElementById("sectionContainer");
-        sectionContainer.innerHTML = ""; // Efface le contenu existant
-
-        switch (sectionName) {
-            case 'information':
-                sectionContainer.innerHTML = `
-                    <h1>Information</h1>
-                    <h2>Création de Jeux avec Python, Tkinter et PIL</h2>
-    <p>Je développe des jeux en utilisant le langage Python en combinant les fonctionnalités de Tkinter et PIL (Pillow) pour créer des expériences interactives uniques et visuellement attrayantes.</p>
-
-    <h3>Langage de Programmation Python</h3>
-    <p>Python est un langage puissant et convivial utilisé dans le développement de jeux pour sa facilité d'apprentissage, sa lisibilité du code et sa flexibilité. Avec Python, je peux créer des jeux 2D et 3D en exploitant ses nombreuses bibliothèques et frameworks.</p>
-
-    <h3>Bibliothèques Principales pour les Jeux</h3>
-    <ul>
-        <li><strong>Tkinter</strong> : Tkinter est une bibliothèque graphique intégrée à Python, idéale pour créer des interfaces utilisateur (UI) dans mes jeux. Je l'utilise pour concevoir des menus interactifs, des fenêtres de jeu et des éléments d'interface utilisateur.</li>
-        <li><strong>PIL (Pillow)</strong> : PIL (ou Pillow) est une bibliothèque de traitement d'images en Python. Je l'utilise pour charger, manipuler et afficher des images dans mes jeux, ce qui permet d'ajouter des graphismes et des effets visuels attrayants.</li>
-    </ul>
-
-    <h3>Utilisation de Tkinter et PIL dans les Jeux</h3>
-    <p>Dans mes projets de jeux, j'intègre Tkinter et PIL pour améliorer l'expérience utilisateur et l'aspect visuel. Tkinter me permet de créer une interface utilisateur intuitive, tandis que PIL enrichit mes jeux avec des graphismes personnalisés et des animations.</p>
-
-    <h3>Exemples de Projets</h3>
-    <p>Voici quelques exemples de jeux que j'ai créés en utilisant Python avec Tkinter et PIL :</p>
-    <ul>
-        <li><strong> Jeu Pokémon</strong> : jeux avec Tkinter et Pil pour faire des combats avec un pokémon contre un adversaire de niveau différents.</li>
-    </ul>
-                `;
-                break;
-            case 'telechargement':
-                sectionContainer.innerHTML = `
-                    <h1>Téléchargement</h1>
-                    <ul>
-                        <li><strong>1- Jeu Pokémon </stong> : <a  href="version 1.4.zip" download="Pokémon.zip">téléchargement</a>
-</li>
-                    </ul>
-                `;
-                break;
-            case 'contact':
-                sectionContainer.innerHTML = `
-                    <h1>Contact</h1>
-                    <h2>Contactez-nous</h2>
-
-<p>N'hésitez pas à nous contacter pour toute question ou collaboration concernant le développement de jeux en Python.</p>
-
-
-<h3>Coordonnées de Contact</h3>
-<p><strong>Email :</strong> jeu.contact.letueurv@gmail.com</p>
-<p><strong>Discord :</strong> letueurv</p>
-
-<h3>Collaborations</h3>
-<p>Nous sommes ouverts aux collaborations et partenariats dans le domaine du développement de jeux. Contactez-nous pour en savoir plus sur nos projets et nos opportunités de collaboration.</p>
-
-<h3>Horaires de Disponibilité</h3>
-<p>Nous répondons aux messages et aux requêtes du <strong>Samedi</strong> et <strong>Dimanche</strong>.</p>
-                `;
-                break;
-            case 'patchnotes':
-                sectionContainer.innerHTML = `
-                    <h1>Patch Notes</h1>
-                    <h2>Jeu Pokémon</h2>
-                    <ul>
-                        <li><strong>Version 1.3</strong> - Modification de bug.</li>
-                        <li><strong>Version 1.4</strong> - 50 Nouveaux pokémon -> 100pokemon jouable </li>
-                    </ul>
-                `;
-                break;
-            
-            case 'classement':
-                sectionContainer.innerHTML = `
-                    <h1>Classement</h1>
-                    <p>Si vous voulez rentrer dans les classements envoyé le fichier dico des jeux par le mails dans le contact pour peut-être rentrer dans ce classement. Il sera mis à jour tous les dimanches</p>
-                    <h2>Pokémon</h2>
-                    <table>
-                        <tr>
-                            <td>Rang</td>
-                            <td>Pseudo</td>
-                            <td>Nombre de combats</td>
-                            <td>Victoire</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Loïc</td>
-                            <td>49</td>
-                            <td>36</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Maïlys</td>
-                            <td>60</td>
-                            <td>32</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Romain</td>
-                            <td>4</td>
-                            <td>3</td>
-                            </tr>
-                            <tr>
-                            <td>4</td>
-                            <td>CSniper</td>
-                            <td>4</td>
-                            <td>2</td>
-                            </tr>
-                            <tr>
-                            <td>5</td>
-                            <td>Po</td>
-                            <td>1</td>
-                            <td>1</td>
-                        </tr>
-                    </table>
-                    
-                `;
-                break;
-            default:
-                break;
-        }
-
-        // Ferme le menu déroulant après avoir sélectionné une section
-        toggleDropdown();
-    }
-
-    function showHomepage() {
-        var sectionContainer = document.getElementById("sectionContainer");
-        sectionContainer.innerHTML = `
-        <h1>Bienvenue sur la Page d'Accueil</h1>
-        <p>Bonjour et bienvenue sur mon site dédié aux jeux créés avec Python, Tkinter et PIL. Je suis passionné par le développement de jeux interactifs et j'explore les possibilités offertes par ces technologies pour offrir des expériences uniques.</p>
-        
-        <h2>À Propos de Moi</h2>
-        <p>Je suis un développeur autodidacte passionné par la programmation de jeux en utilisant Python. Mes créations combinent l'art du code avec des éléments visuels attrayants grâce à Tkinter et PIL.</p>
-        
-        <h2>Mes Projets</h2>
-        <div class="project">
-                        <p><strong>Jeu Pokémon</strong> - Explorez un monde fantastique et affrontez des adversaires avec vos Pokémon préférés.</p>
-        </div>
-    
-        <h2>Qu'est-ce que Vous Trouverez Ici ?</h2>
-        <p>Sur ce site, vous pouvez découvrir mes créations, en apprendre davantage sur mes techniques de développement et me contacter pour des collaborations ou des suggestions.</p>
-    
-        <h2>Contactez-moi</h2>
-        <p>N'hésitez pas à me contacter si vous avez des questions, des idées ou si vous souhaitez en savoir plus sur mes projets. Je suis toujours ouvert aux discussions et aux nouvelles opportunités !</p>
-        
-        <h2>Crédit</h2>
-        <p>Je remercie ma copine pour l'aide sur les bugs et les photos des pokémon pour le 1er jeu</p>
-    </div>
-        `;
-    }
-</script>
-
-
+<script src="script.js"></script>
 
 </body>
 </html>
