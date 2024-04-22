@@ -3,47 +3,7 @@ function toggleDropdown() {
     dropdownContent.classList.toggle("dropdown-open");
 }
 
-function openSection(sectionName) {
-    var sectionContainer = document.getElementById("sectionContainer");
-    sectionContainer.innerHTML = ""; // Efface le contenu existant
-
-    switch (sectionName) {
-        case 'information':
-            sectionContainer.innerHTML = `
-                <h1>Information</h1>
-                <p>Informations sur le développement de jeux avec Python, Tkinter et PIL.</p>
-            `;
-            break;
-        case 'telechargement':
-            sectionContainer.innerHTML = `
-                <h1>Téléchargement</h1>
-                <p>Téléchargez le jeu Pokémon ici.</p>
-            `;
-            break;
-        case 'contact':
-            sectionContainer.innerHTML = `
-                <h1>Contact</h1>
-                <p>Contactez-moi pour toute question ou collaboration.</p>
-            `;
-            break;
-        case 'patchnotes':
-            sectionContainer.innerHTML = `
-                <h1>Patch Notes</h1>
-                <p>Découvrez les dernières mises à jour du jeu.</p>
-            `;
-            break;
-        case 'classement':
-            sectionContainer.innerHTML = `
-                <h1>Classement</h1>
-                <p>Consultez le classement des joueurs.</p>
-            `;
-            break;
-        default:
-            break;
-    }
-}
-
-function showHomepage() {
+function showWelcomePage() {
     var sectionContainer = document.getElementById("sectionContainer");
     sectionContainer.innerHTML = `
         <h1>Bienvenue sur la Page d'Accueil</h1>
@@ -65,5 +25,45 @@ function showHomepage() {
         
         <h2>Crédit</h2>
         <p>Je remercie ma copine pour l'aide sur les bugs et les photos des Pokémon pour le premier jeu.</p>
+    `;
+}
+
+function showInformation() {
+    var sectionContainer = document.getElementById("sectionContainer");
+    sectionContainer.innerHTML = `
+        <h1>Information</h1>
+        <p>Informations sur le développement de jeux avec Python, Tkinter et PIL.</p>
+    `;
+}
+
+function showDownload() {
+    var sectionContainer = document.getElementById("sectionContainer");
+    sectionContainer.innerHTML = `
+        <h1>Téléchargement</h1>
+        <p>Téléchargez le jeu Pokémon ici.</p>
+    `;
+}
+
+function showContact() {
+    var sectionContainer = document.getElementById("sectionContainer");
+    sectionContainer.innerHTML = `
+        <h1>Contact</h1>
+        <p>Contactez-moi pour toute question ou collaboration.</p>
+    `;
+}
+
+function showPatchNotes() {
+    var sectionContainer = document.getElementById("sectionContainer");
+    sectionContainer.innerHTML = `
+        <h1>Patch Notes</h1>
+        <p>Découvrez les dernières mises à jour du jeu.</p>
+    `;
+}
+
+function showRanking() {
+    var sectionContainer = document.getElementById("sectionContainer");
+    sectionContainer.innerHTML = `
+        <h1>Classement</h1>
+        <p>Consultez le classement des joueurs.</p>
     `;
 }
