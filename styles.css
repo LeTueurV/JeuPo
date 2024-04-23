@@ -97,3 +97,51 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Times New Roman", Times, serif;
 }
 
+
+/* Tableau de Classement */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Cellules de Rang */
+td:first-child {
+    font-weight: bold;
+}
+
+/* Dernière Cellule (Victoires) */
+td:last-child {
+    font-weight: bold;
+    color: green; /* Couleur du texte pour les victoires */
+}
+
+/* Lignes de Bordure */
+td {
+    border: 1px solid #ddd;
+}
+
+/* Largeur des Colonnes */
+th, td {
+    width: 25%;
+}
