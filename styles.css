@@ -10,6 +10,12 @@ p {
     font-size: large;
 }
 
+a{
+    color: black;
+    text-decoration: none;
+    
+}
+
 /* Barre de navigation */
 .navbar {
     display: flex;
