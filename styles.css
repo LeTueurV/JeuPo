@@ -1,157 +1,184 @@
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: grey;
-    
+    background-color: #121212;
+    color: #e0e0e0;
+    overflow-x: hidden;
 }
 
-p {
-    font-size: large;
+header {
+    background-color: #1f2937;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-a{
-    color: black;
-    text-decoration: none;
-    
-}
-
-/* Barre de navigation */
 .navbar {
     display: flex;
-    justify-content: flex-end;
-    align-items: center; /* Alignement vertical au centre */
-    background-color: #333;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.homebtn {
-    color: #fff;
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #38bdf8;
+    text-shadow: 2px 2px #1e293b;
+    animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.6;
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.nav-links a {
     text-decoration: none;
-    padding: 10px 20px;
-    margin-right: 10px;
-    border-radius: 5px;
-    background-color: #333;
+    color: #f3f4f6;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
 }
 
-.dropbtn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #38bdf8;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.dropdown {
+    position: relative;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 40px;
-    right: 10px;
-    background-color: grey;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* Ombre uniforme pour le menu */
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f2937;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
     z-index: 1;
-    text-align: right; /* Alignement du texte à droite */
-    transition: all 0.3s ease; /* Animation de transition pour le menu */
-    overflow: hidden; /* Masque le contenu qui dépasse */
+    min-width: 200px;
 }
 
-.dropdown-content button,
 .dropdown-content a {
-    color: white;
+    color: #f3f4f6;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    border: 1px solid #333 ; /* Contour gris autour des boutons */
-    background-color: #333; /* Couleur de fond des boutons */
-    cursor: pointer;
-    width: 100%; /* Largeur à 100% pour les boutons */
-    box-sizing: border-box; /* Boîte de modèle incluant le bord */
-    transition: all 0.3s ease; /* Animation de transition pour les boutons */
+    transition: background-color 0.3s;
 }
 
-.dropdown-content button:hover,
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #38bdf8;
 }
 
 .dropdown-open {
     display: block;
-    max-height: 300px; /* Hauteur maximale pour l'effet de déroulement */
-    transition: max-height 0.5s ease; /* Animation de déroulement */
 }
 
 #sectionContainer {
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #333;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+section {
+    margin-bottom: 40px;
+    background-color: #1f2937;
     padding: 20px;
-    transition: opacity 0.3s ease; /* Animation de transition pour le conteneur principal */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
 }
 
-table{
-    border-collapse: collapse
-}
-  
-td{
-    border: 1px solid black;
-    padding: 10px;
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    transform: translateX(-50%) rotate(45deg);
+    opacity: 0.5;
+    pointer-events: none;
+    animation: gradientMove 3s linear infinite;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Times New Roman", Times, serif;
+@keyframes gradientMove {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
 }
 
+h1, h2, h3 {
+    color: #38bdf8;
+    text-shadow: 2px 2px #1e293b;
+}
 
-/* Tableau de Classement */
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #1f2937;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 th, td {
-    padding: 12px;
-    text-align: center;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #38bdf8;
 }
 
 th {
-    background-color: #333;
-    color: #fff;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #38bdf8;
+    color: #1f2937;
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+    background-color: #273549;
 }
 
-/* Cellules de Rang */
-td:first-child {
-    font-weight: bold;
-}
-
-/* Dernière Cellule (Victoires) */
 td:last-child {
+    color: #f87171;
     font-weight: bold;
-    color: green; /* Couleur du texte pour les victoires */
-}
-
-/* Lignes de Bordure */
-td {
-    border: 1px solid #ddd;
-}
-
-/* Largeur des Colonnes */
-th, td {
-    width: 25%;
-}
-
-#left{
-    text-align: left;
 }
